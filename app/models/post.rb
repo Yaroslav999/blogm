@@ -1,3 +1,4 @@
 class Post < ApplicationRecord
-	  mount_uploader :image, ImageUploader
+  paginates_per 4
+  mount_uploader :image, ImageUploader
 end
