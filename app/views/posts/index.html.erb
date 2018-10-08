@@ -1,0 +1,13 @@
+<div class="container">
+	<h1><%= link_to 'Create post', new_post_path %></h1>
+	<div class="posts">
+		<% @posts.each do |post| %>
+			<div class="post">
+				<h2><%= link_to post.name, post_path(post) %></h2>
+				<p class="img-post-index"> <img src="<%= post.image %>" alt=""> </p>
+
+				<p><%= post.content %></p>
+			</div>
+		<% end %>
+	</div>
+</div>
