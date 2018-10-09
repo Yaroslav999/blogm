@@ -1,14 +1,16 @@
 <div class="container">
-	<h1><%= link_to 'Create post', new_post_path %></h1>
+	<h1><%= link_to 'Создать пост', new_post_path %></h1>
 	<div class="posts">
 		<% @posts.each do |post| %>
 			<div class="post">
 				<h2><%= link_to post.name, post_path(post) %></h2>
-				<p class="img-post-index"> <img src="<%= post.image %>" alt=""> </p>
-
-				<p><%= post.content %></p>
+				<% if post.image.present? %>
+					<p class="img-post-index"> <img src="<%= post.image %>" alt=""> </p>
+				<% end %>
+				<p><%= post.content.length > 100 ? post.content.first(100).html_safe+'...' : post.content.html_safe   %></p> 
+				<p><%= link_to 'Изменить пост' , edit_post_path(post) %></p>
 			</div>
 		<% end %>
 	</div>
-</div>
 <%= paginate @posts %>
+</div>
