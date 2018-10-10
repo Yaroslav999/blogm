@@ -1,6 +1,6 @@
-<div class="container">
-	<h1><%= link_to 'Создать пост', new_post_path %></h1>
-	<article class="posts">
+<h1><%= @category.name %></h1>
+<p><%= @category.description.html_safe %></p>
+	<div class="posts">
 		<% @posts.each do |post| %>
 			<div class="post">
 				<h2><%= link_to post.name, post_path(post) %></h2>
@@ -11,6 +11,4 @@
 				<p><%= link_to 'Изменить пост' , edit_post_path(post) %></p>
 			</div>
 		<% end %>
-	</article>
- 	<%= paginate @posts %>
-</div>
+	</div>

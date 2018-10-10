@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_items, only: [:edit, :destroy, :show, :update]
+  before_action :set_posts, only: [:edit, :destroy, :show, :update]
 
   def new
     @post = Post.new
@@ -39,11 +39,11 @@ class PostsController < ApplicationController
 
   private
 
-  def set_items
+  def set_posts
     @post = Post.find(params[:id])
   end
 
   def post_params
-    params.require(:post).permit(:name, :content, :image)
+    params.require(:post).permit(:name, :content, :image, :category_id)
   end
 end

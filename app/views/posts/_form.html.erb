@@ -12,6 +12,10 @@
 		  <%= f.file_field :image %><br>
 		</div>
 		<div class="form-group">
+			<%= f.label :Категория %><br>
+			<%= f.collection_select :category_id, Category.order(:name), :id, :name, {include_blank: true}, class: 'form-control' %><br>  
+		</div>
+		<div class="form-group">
 			<%= f.submit 'Cохранить', class:'btn btn-info'%>
 		</div>
 
