@@ -1,3 +1,14 @@
+<% if @post.errors.any? %>
+  <div class="alert alert-danger">
+    <h5><%= 'Вы допустили ошибку при заполнении формы' %></h5>
+    <ul>
+      <% @post.errors.messages.each  do |attr, msg| %>
+        <li><%= msg.to_s.gsub(/\["|"\]/, '') %></li>
+      <%end%>
+    </ul>
+  </div>
+<% end %>
+
 <div class="container">
 	<%= form_for @post do |f| %>
 		<div class="form-group">

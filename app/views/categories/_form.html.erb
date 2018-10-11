@@ -1,3 +1,14 @@
+<% if @category.errors.any? %>
+  <div class="alert alert-danger">
+    <h5><%= 'Вы допустили ошибку при заполнении формы' %></h5>
+    <ul>
+      <% @category.errors.messages.each  do |attr, msg| %>
+        <li><%= msg.to_s.gsub(/\["|"\]/, '') %></li>
+      <%end%>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for @category do |f| %>
 	<div class="form-group">
 	  <%= f.label :Название_категории %><br>
