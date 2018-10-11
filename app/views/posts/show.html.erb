@@ -5,5 +5,24 @@
 	<p><%= link_to 'Изменить', edit_post_path %></p>
 	<p><%= link_to 'Удалить', post_path,
 	    	        method: :delete,
-	    	        data: {confirm: 'Вы уверены?'} %></p>	
+	    	        data: {confirm: 'Вы уверены?'} %></p>
+
+	<div class="comment_pane">
+		<% @post.comments.each do |comment| %>
+			<%= render 'comments/comment', comment: comment %>
+		<% end %>
+	</div> 	        
+
+	<p>Добавить коментарий</p>
+
+	<%= form_for([@post, @post.comments.build], remote: true) do |f| %>
+		<div class="form-group">	
+			<p><%= f.label 'Автор' %></p>
+			<p><%= f.text_field :author %></p>
+		</div>
+		<div class="form-group">
+			<p><%= f.text_area :content %></p> <br>
+			<p><%= f.submit%></p>	
+		</div>
+	<% end %>
 </div>	

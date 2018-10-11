@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.order(:name).page params[:page]
+    @posts = Post.order(:id).reverse_order.page
   end
 
   def edit
@@ -35,6 +35,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    @comments = @post.comments
+    @new_comment = @post.comments.new
   end
 
   private

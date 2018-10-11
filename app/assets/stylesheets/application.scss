@@ -29,3 +29,11 @@ h1{
 		width: 150px;		
 	}
 }
+.comment-body{
+    border-bottom: 1px solid lightskyblue;
+    margin-bottom: 20px;
+	span{
+		font-weight: bold;
+        font-style: italic;
+	}
+}
