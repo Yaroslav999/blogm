@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Gem use:
 
-Things you may want to cover:
+* Trix editor - WYSIWYG editor for form
 
-* Ruby version
+* Carrierwave - uploader for image
 
-* System dependencies
+* Bootstrap4 - framework for stylization
 
-* Configuration
+* Kaminari - pagination
 
-* Database creation
+How start only local
 
-* Database initialization
+* git clone https://github.com/Yaroslav999/blogm.git
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* rails s
