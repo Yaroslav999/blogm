@@ -10,6 +10,12 @@
   </head>
 
   <body>
+  <header class="header">
+    <ul class="menu nav">
+      <li class="nav-item"><%= link_to 'Статьи', posts_path  %></li>
+      <li class="nav-item"><%= link_to 'Категории', categories_path  %></li>
+    </ul>
+  </header>
     <%= yield %>
   </body>
 </html>

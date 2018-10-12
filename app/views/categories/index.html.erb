@@ -1,0 +1,25 @@
+<%= link_to 'Новая категория', new_category_path %>
+
+<section id="categories">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Название</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @categories.each_with_index do |category, index|%>
+				<tr>
+					<td><%= index+1 %></td>
+					<td><%= link_to category.name, category_path(category) %></td>
+					<td>
+						<%= link_to 'Изменить', edit_category_path(category), class:'btn btn-outline-primary btn-sm' %>
+						<%= link_to 'Удалить', category_path(category), method: :delete, data: {confirm: 'Вы уверены? После удаления категории, будут удалены все статьи этой категории.' }, class:'btn btn-outline-danger btn-sm' %>
+					</td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+
+</section>

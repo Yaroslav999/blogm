@@ -1,0 +1,16 @@
+<div class="container col-lg-12  col-md-12 col-xs-12">	
+<h1><%= @category.name %></h1>
+<p><%= @category.description.html_safe %></p>
+	<div class="posts">
+		<% @posts.each do |post| %>
+			<div class="post">
+				<h2><%= link_to post.name, post_path(post) %></h2>
+				<% if post.image.present? %>
+					<p class="img-post-index"> <img src="<%= post.image %>" alt=""> </p>
+				<% end %>
+				<p><%= post.content.length > 100 ? post.content.first(100).html_safe+'...' : post.content.html_safe   %></p> 
+				<p><%= link_to 'Изменить пост' , edit_post_path(post) %></p>
+			</div>
+		<% end %>
+	</div>
+</div>

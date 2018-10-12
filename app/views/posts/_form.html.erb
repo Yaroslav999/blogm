@@ -1,0 +1,35 @@
+<% if @post.errors.any? %>
+  <div class="alert alert-danger">
+    <h5><%= 'Вы допустили ошибку при заполнении формы' %></h5>
+    <ul>
+      <% @post.errors.messages.each  do |attr, msg| %>
+        <li><%= msg.to_s.gsub(/\["|"\]/, '') %></li>
+      <%end%>
+    </ul>
+  </div>
+<% end %>
+
+<div class="container col-xl-8 col-lg-12  col-md-12 col-xs-1">
+	<%= form_for @post do |f| %>
+		<div class="form-group">
+		  <%= f.label :Название %><br>
+		  <%= f.text_field :name, class: 'form-control' %><br>  
+		</div>
+		<div class="form-group">
+		  <%= f.label :Текст %><br>
+		  <%= f.trix_editor :content, class: 'editor' %><br>  
+		</div>
+		<div class="form-group">
+		  <%= f.file_field :image %><br>
+		</div>
+		<div class="form-group">
+			<%= f.label :Категория %><br>
+			<%= f.collection_select :category_id, Category.order(:name), :id, :name, {include_blank: true}, class: 'form-control' %><br>  
+		</div>
+		<div class="form-group">
+			<%= f.submit 'Cохранить', class:'btn btn-info'%>
+		</div>
+
+	<% end %>
+<p><%= link_to 'Назад', posts_path, class:'btn btn-primary' %></p>
+</div>
