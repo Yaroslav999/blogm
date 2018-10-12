@@ -4,7 +4,7 @@
 		<% @posts.each do |post| %>
 			<div class="post">
 				<h2><%= link_to post.name.capitalize, post_path(post) %></h2>
-				<p>(Статья опубликована: <%= time_ago_in_words(post.created_at) %> ago)</p>
+				<p>(Статья опубликована: <time><%= post.created_at.to_date.strftime("%D %B , %Y") %></time>)</p>
 				<% if post.image.present? %>
 					<p class="img-post-index"> <img src="<%= post.image %>" alt=""> </p>
 				<% end %>
