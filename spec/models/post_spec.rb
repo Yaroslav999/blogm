@@ -14,7 +14,7 @@ RSpec.describe Post, type: :model do
 
     it 'normal post' do
       category = Category.new(name: 'First category.', description: 'Text ....').save
-      post = Post.new(name: 'First post.', category_id: category.to_param).save
+      post = Post.new(name: 'First post.', content: 'Text ...', category_id: category.to_param).save
       expect(post).to eq(true)
     end
   end
