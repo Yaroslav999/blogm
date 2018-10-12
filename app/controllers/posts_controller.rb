@@ -6,7 +6,9 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @comments = @post.comments
     @post.destroy
+    @comments.destroy
     redirect_to posts_index_path
   end
 

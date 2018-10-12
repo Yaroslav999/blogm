@@ -15,7 +15,7 @@
 					<td><%= link_to category.name, category_path(category) %></td>
 					<td>
 						<%= link_to 'Изменить', edit_category_path(category), class:'btn btn-outline-primary btn-sm' %>
-						<%= link_to 'Удалить', category_path(category), method: :delete, data: {confirm: 'Вы уверены?' }, class:'btn btn-outline-danger btn-sm' %>
+						<%= link_to 'Удалить', category_path(category), method: :delete, data: {confirm: 'Вы уверены? После удаления категории, будут удалены все статьи этой категории.' }, class:'btn btn-outline-danger btn-sm' %>
 					</td>
 				</tr>
 			<% end %>

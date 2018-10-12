@@ -13,6 +13,40 @@
  *= require trix
  */
 @import "bootstrap";
+header{
+	border-bottom: 1px solid blue !important;
+}
+.header{
+	.menu{
+	    margin-bottom: 0px !important;
+	    display: flex;
+        justify-content: center;   	
+        list-style-type: none;
+        a{
+        	text-align: center;
+            width: 150px !important;
+            height: 40px !important;
+            padding-top: 5px;
+            &:hover{
+                    text-decoration: none !important;
+                    color: white !important;         
+            }
+        }
+    }
+}
+.menu{
+    li{
+        width: 100px;
+        text-align: center;
+        height: 25px;
+        &:hover{
+            background-color: blue !important;
+            a{
+            color: white !important;
+            }
+        }
+    }
+}
 h1{
 	text-align: center;
 }
@@ -26,10 +60,15 @@ h1{
 }
 .img-post-index{
 	img{
-		width: 150px;		
+		width: 410px;		
 	}
 }
-.comment-body{
+.comment_pane{
+	span{
+		font-weight: bold;
+	}	
+}
+.comment_body{
     border-bottom: 1px solid lightskyblue;
     margin-bottom: 20px;
 	span{
