@@ -6,7 +6,9 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
+    @comments = @category.comments
     @category.destroy
+    @comments.destroy
     redirect_to categories_path
   end
 

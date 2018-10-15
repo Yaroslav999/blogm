@@ -14,4 +14,6 @@ How start only local
 
 * git clone https://github.com/Yaroslav999/blogm.git
 
+* rake db:migrate
+
 * rails s

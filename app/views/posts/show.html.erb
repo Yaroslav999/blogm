@@ -15,8 +15,8 @@
 
 	<%= form_for([@post, @post.comments.build], remote: true) do |f| %>
 		<div class="form-group">	
-			<p><%= f.label 'Автор' %></p>
-			<p><%= f.text_field :author, class:'form-control' %></p>
+			<p><%= f.label 'Автор:' %>
+			<%= f.text_field :author, class:'form-control', placeholder: 'Иванов Иван.' %></p>
 		</div>
 		<div class="form-group">
 			<p><%= f.text_area :content, class:'form-control' %></p> <br>

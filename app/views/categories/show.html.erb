@@ -13,4 +13,23 @@
 			</div>
 		<% end %>
 	</div>
+	<div class="comment_pane col-xl-12 col-lg-12  col-md-12 col-xs-12">
+		<span>Коментарии:</span>
+		<% @category.comments.each do |comment| %>
+			<%= render 'comments/comment', comment: comment %>
+		<% end %>
+	</div> 	        
+
+	<p>Добавить коментарий</p>
+
+	<%= form_for([@category, @category.comments.build], remote: true) do |f| %>
+		<div class="form-group">	
+			<p><%= f.label 'Автор' %></p>
+			<p><%= f.text_field :author, class:'form-control' %></p>
+		</div>
+		<div class="form-group">
+			<p><%= f.text_area :content, class:'form-control' %></p> <br>
+			<p><%= f.submit 'Создать коментарий', class:'btn btn-primary' %></p>	
+		</div>
+	<% end %>
 </div>

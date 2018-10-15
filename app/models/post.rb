@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   paginates_per 4
   belongs_to :category
-  has_many :comments, dependent: :delete_all
+  has_many :comments, as: :commentable, dependent: :delete_all
   mount_uploader :image, ImageUploader
   validates :content, presence: { message: 'Заполните текст поста' }
   validates :name, presence: true, format: { with: /..{2}.*?\s..{2}.*?\./,
